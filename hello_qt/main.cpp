@@ -1,10 +1,11 @@
 #include <QApplication>
 #include <QLabel>
+#include <memory>
 
 int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
-    QLabel* label = new QLabel("Hello QT!");
+    auto label = std::make_unique<QLabel>("Hello QT!");
     label->show();
 
     return app.exec();
